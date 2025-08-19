@@ -12,11 +12,7 @@ Smooth 3D hover effect using CSS transform and transition.
 
 Beginner-friendly code — easy to read and modify.
 
- Project Structure
-3D-Hover-Effect/
-│── index.html   # Main HTML file
-│── style.css    # CSS for styling and hover effect
-└── assets/      # (Optional) place for images or extra files
+
 
 Getting Started
 
