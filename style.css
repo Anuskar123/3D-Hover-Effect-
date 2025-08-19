@@ -1,0 +1,366 @@
+/* 3D TV Frame Illusion */
+
+.tv-frame {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: 42vw;
+  max-width: 900px;
+  max-height: 540px;
+  min-width: 320px;
+  min-height: 180px;
+  transform: translate(-50%, -50%) scale(1.04);
+  border-radius: 0;
+  background: #181622;
+  box-shadow:
+    0 0 40px 0 #00fff7cc,
+    0 0 0 8px #232323,
+    0 0 80px 10px #00fff755;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+  border: 4px solid #00fff7;
+  animation: neon-glow 2s linear infinite alternate;
+}
+
+@keyframes neon-glow {
+  0% { box-shadow: 0 0 40px 0 #00fff7cc, 0 0 0 8px #232323, 0 0 80px 10px #00fff755; border-color: #00fff7; }
+  100% { box-shadow: 0 0 80px 10px #ff00ccaa, 0 0 0 8px #232323, 0 0 120px 20px #ff00cc55; border-color: #ff00cc; }
+}
+
+/* Animated grid background for game HUD */
+.game-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, #00fff7 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(0deg, #00fff7 0 2px, transparent 2px 40px);
+  opacity: 0.06;
+  animation: grid-move 8s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 40px 40px, 40px 40px; }
+}
+
+/* Neon corner accents */
+.hud-corner {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 4px solid #00fff7;
+  z-index: 3;
+  pointer-events: none;
+}
+.hud-corner.tl { top: calc(50% - 18vw); left: calc(50% - 32vw); border-right: none; border-bottom: none; }
+.hud-corner.tr { top: calc(50% - 18vw); left: calc(50% + 32vw - 32px); border-left: none; border-bottom: none; }
+.hud-corner.bl { top: calc(50% + 18vw - 32px); left: calc(50% - 32vw); border-right: none; border-top: none; }
+.hud-corner.br { top: calc(50% + 18vw - 32px); left: calc(50% + 32vw - 32px); border-left: none; border-top: none; }
+
+
+/* TV Bezel */
+.tv-frame::before {
+  display: none;
+}
+
+/* TV Glass Reflection */
+.tv-frame::after {
+  display: none;
+}
+
+/* TV Stand */
+.tv-stand {
+  position: fixed;
+  top: calc(50% + 25vw);
+  left: 50%;
+  width: 10vw;
+  max-width: 120px;
+  height: 2vw;
+  max-height: 24px;
+  background: linear-gradient(90deg, #232323 0%, #444 100%);
+  border-radius: 0 0 2vw 2vw;
+  box-shadow: 0 8px 24px 0 #000a;
+  transform: translate(-50%, 0);
+  z-index: 2;
+}
+
+/* Glass reflection effect */
+.tv-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(120deg, #fff3 10%, #fff1 30%, #fff0 60%);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Scanlines overlay for retro TV effect */
+.tv-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* TV shadow and reflection */
+.tv-shadow {
+  position: fixed;
+  top: calc(50% + 34vh);
+  left: 50%;
+  width: 60vw;
+  height: 7vh;
+  transform: translate(-50%, 0) scaleX(1.1);
+  background: radial-gradient(ellipse at center, #0008 0%, #0000 80%);
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(2px);
+}
+.gaming-grid {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, #00fff7 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(0deg, #00fff7 0 2px, transparent 2px 40px);
+  opacity: 0.08;
+  animation: grid-move 10s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 40px 40px, 40px 40px; }
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60vw;
+  height: 60vh;
+  transform: translate(-50%, -50%) rotateX(18deg) rotateY(8deg);
+  border: 6px solid;
+  border-image: linear-gradient(
+    120deg,
+    #00fff7 0%,
+    #ff00cc 40%,
+    #ffe600 70%,
+    #00fff7 100%
+  ) 1;
+  border-radius: 32px;
+  box-shadow: 0 0 60px 10px #00fff788, 0 0 120px 20px #ff00cc55, 0 0 0 12px rgba(0,0,0,0.18) inset;
+  background: rgba(30, 30, 60, 0.25);
+  z-index: 1;
+  pointer-events: none;
+  animation: frame-rgb 4s linear infinite;
+  backdrop-filter: blur(8px) saturate(1.2);
+  overflow: hidden;
+}
+
+@keyframes frame-rgb {
+  0% {
+    border-image: linear-gradient(120deg, #00fff7 0%, #ff00cc 40%, #ffe600 70%, #00fff7 100%) 1;
+    box-shadow: 0 0 60px 10px #00fff788, 0 0 120px 20px #ff00cc55, 0 0 0 12px rgba(0,0,0,0.18) inset;
+  }
+  33% {
+    border-image: linear-gradient(120deg, #ff00cc 0%, #ffe600 40%, #00fff7 70%, #ff00cc 100%) 1;
+    box-shadow: 0 0 60px 10px #ff00cc88, 0 0 120px 20px #ffe60055, 0 0 0 12px rgba(0,0,0,0.18) inset;
+  }
+  66% {
+    border-image: linear-gradient(120deg, #ffe600 0%, #00fff7 40%, #ff00cc 70%, #ffe600 100%) 1;
+    box-shadow: 0 0 60px 10px #ffe60088, 0 0 120px 20px #00fff755, 0 0 0 12px rgba(0,0,0,0.18) inset;
+  }
+  100% {
+    border-image: linear-gradient(120deg, #00fff7 0%, #ff00cc 40%, #ffe600 70%, #00fff7 100%) 1;
+    box-shadow: 0 0 60px 10px #00fff788, 0 0 120px 20px #ff00cc55, 0 0 0 12px rgba(0,0,0,0.18) inset;
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60vw;
+  height: 60vh;
+  transform: translate(-50%, -50%) rotateX(18deg) rotateY(8deg);
+  border-radius: 32px;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 30%, #fff3 0%, #fff0 60%),
+              radial-gradient(circle at 70% 70%, #ff00cc33 0%, #fff0 60%),
+              radial-gradient(circle at 80% 20%, #33339933 0%, #fff0 60%);
+  opacity: 0.7;
+  animation: lights-move 8s linear infinite;
+}
+
+@keyframes lights-move {
+  0% {
+    background-position: 30% 30%, 70% 70%, 80% 20%;
+  }
+  50% {
+    background-position: 40% 40%, 60% 60%, 70% 30%;
+  }
+  100% {
+    background-position: 30% 30%, 70% 70%, 80% 20%;
+  }
+}
+
+@keyframes frame-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateX(20deg) rotateY(10deg) rotateZ(0deg);
+    border-color: rgba(255, 0, 80, 0.5);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotateX(25deg) rotateY(-10deg) rotateZ(180deg);
+    border-color: rgba(0, 200, 255, 0.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(20deg) rotateY(10deg) rotateZ(360deg);
+    border-color: rgba(255, 0, 80, 0.5);
+  }
+}
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #181622;
+/* Add the following HTML inside <body> for the TV effect: */
+/* <div class="tv-frame"></div> */
+/* <div class="tv-shadow"></div> */
+
+}
+
+
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
