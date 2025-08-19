@@ -2,7 +2,7 @@
 
 A simple and elegant 3D hover effect built using HTML and CSS. This project demonstrates how adding a few lines of CSS transforms can create smooth, eye-catching animations that bring static elements to life.
 
- Features
+✨ Features
 
 Pure HTML & CSS (no frameworks, no JavaScript).
 
@@ -12,9 +12,7 @@ Smooth 3D hover effect using CSS transform and transition.
 
 Beginner-friendly code — easy to read and modify.
 
-
-
-Getting Started
+🚀 Getting Started
 
 Clone the repository:
 
@@ -27,7 +25,7 @@ cd 3D-Hover-Effect
 open index.html    # or just double-click the file
 
 
-Hover over the element and enjoy the 3D animation 
+Hover over the element and enjoy the 3D animation ✨
 
 🛠️ Customization
 
