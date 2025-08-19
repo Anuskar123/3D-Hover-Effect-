@@ -1,36 +1,33 @@
-3D Hover Effect
+# 3D Hover Effect 🎨  
 
-A simple and elegant 3D hover effect built using HTML and CSS. This project demonstrates how adding a few lines of CSS transforms can create smooth, eye-catching animations that bring static elements to life.
+A lightweight and elegant **3D hover animation** built with just **HTML & CSS**.  
+This project shows how a few CSS transforms and transitions can turn a static element into an eye-catching 3D interactive effect.  
 
-✨ Features
 
-Pure HTML & CSS (no frameworks, no JavaScript).
 
-Lightweight and easy to integrate into any project.
-
-Smooth 3D hover effect using CSS transform and transition.
-
-Beginner-friendly code — easy to read and modify.
+## ✨ Features  
+- Pure **HTML & CSS** (no frameworks, no JavaScript needed).  
+- Smooth and responsive **3D hover effect**.  
+- Beginner-friendly code, easy to modify and extend.  
+- Can be used for **cards, buttons, or portfolio previews**.  
 
 🚀 Getting Started
-
-Clone the repository:
-
+Clone the repository
 git clone https://github.com/Anuskar123/3D-Hover-Effect.git
-
-
-Open the folder and run the project:
+Navigate into the folder
 
 cd 3D-Hover-Effect
-open index.html    # or just double-click the file
+Open in browser
 
+Double-click index.html, or
 
-Hover over the element and enjoy the 3D animation ✨
+Run with a live server extension (VS Code recommended).
 
 🛠️ Customization
+You can tweak the effect easily by editing style.css:
 
-Modify style.css to change colors, sizes, or the hover depth.
+Change transform: rotateX / rotateY values → adjust depth of 3D effect.
 
-Replace the content inside index.html with your own text, buttons, or cards.
+Modify colors, fonts, and card size.
 
-Experiment with different transform: rotateX() / rotateY() values for unique angles.
+Add more elements inside index.html to expand the demo.
