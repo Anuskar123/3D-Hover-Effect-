@@ -10,7 +10,7 @@ This project shows how a few CSS transforms and transitions can turn a static el
 - Can be used for **cards, buttons, or portfolio previews**.  
 
 
-🚀## **Getting Started**
+🚀# **Getting Started**
 Clone the repository
 
 git clone https://github.com/Anuskar123/3D-Hover-Effect.git
@@ -24,7 +24,7 @@ Double-click index.html, or
 
 Run with a live server extension (VS Code recommended).
 
-🛠️## **Customization**
+🛠️# **Customization**
 You can tweak the effect easily by editing style.css:
 
 Change transform: rotateX / rotateY values → adjust depth of 3D effect.
