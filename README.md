@@ -3,8 +3,6 @@
 A lightweight and elegant **3D hover animation** built with just **HTML & CSS**.  
 This project shows how a few CSS transforms and transitions can turn a static element into an eye-catching 3D interactive effect.  
 
----
-
 ## ✨ Features  
 - Pure **HTML & CSS** (no frameworks, no JavaScript needed).  
 - Smooth and responsive **3D hover effect**.  
